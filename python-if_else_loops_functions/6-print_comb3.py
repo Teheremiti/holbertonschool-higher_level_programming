@@ -6,4 +6,4 @@ for tens in range(9):
         if (tens != 8):
             print(", ", end="")
 
-print()
+print("")
