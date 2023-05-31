@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 sep = ""
 for num in range(100):
-    print(sep, "{}".format(num), end="")
-    sep = ","
+    print("{:02d}".format(num), end="")
 
-print("")
+    if (num == 99):
+        sep = "\n"
+    else:
+        sep = ", "
+
+    print(sep, end="")
