@@ -3,11 +3,9 @@ def best_score(a_dictionary):
     if a_dictionary is None:
         return None
 
-    keys = list(a_dictionary)
-    best = keys[0]
-
-    for key in keys:
-        if a_dictionary[key] > a_dictionary[best]:
-            best = key
+    best = list(a_dictionary)[0]
+    for k, v in a_dictionary.items():
+        if v > a_dictionary[best]:
+            best = k
 
     return best
