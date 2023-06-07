@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
-    res = 0
-    for num in my_list:
-        if my_list.count(num) == 1:
-            res += num
+    my_set = {ele for ele in my_list}
+    result = 0
+    for num in my_set:
+        result += num
 
-    return res
+    return result
