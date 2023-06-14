@@ -11,7 +11,8 @@ class Square:
             size (int, optional): Size of the square.
                 Defaults to 0. Stored as a private attribute
             position(tup, optional): Tuple representing the spacial
-                position of the square. Defaults to 0. Stored as a private attribute
+                position of the square. Defaults to 0.
+                Stored as a private attribute.
 
         Raises:
             TypeError: If the size attribute is not an integer.
