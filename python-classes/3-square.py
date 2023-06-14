@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """Module with a Square class that defines more attributes"""
 
 
