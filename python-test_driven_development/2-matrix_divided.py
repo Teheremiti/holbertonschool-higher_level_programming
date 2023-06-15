@@ -18,16 +18,16 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is equal to zero.
     """
 
-    if div == 0:
+    if div == 0 or div is None:
         raise ZeroDivisionError("division by zero")
 
-    if type(matrix) is not list:
+    if type(matrix) is not list or matrix == []:
         raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
 
     new = []
     for row in matrix:
-        if type(row) is not list:
+        if type(row) is not list or row == []:
             raise TypeError("matrix must be a matrix (list of lists) "
                             "of integers/floats")
 
