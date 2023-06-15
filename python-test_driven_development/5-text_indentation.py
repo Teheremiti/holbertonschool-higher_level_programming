@@ -19,7 +19,7 @@ def text_indentation(text):
     new = ""
     mark = 0
     for i in range(len(text)):
-        if text[i] in sep:
+        if text[i] in sep or i == len(text) - 1:
             while text[mark] == " ":
                 mark += 1
 
