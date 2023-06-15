@@ -20,10 +20,7 @@ def text_indentation(text):
     mark = 0
     for i in range(len(text)):
         if text[i] in sep or i == len(text) - 1:
-            while text[mark] == " ":
-                mark += 1
-
-            new += text[mark:i + 1] + "\n\n"
+            new += (text[mark:i + 1]).strip() + "\n\n"
             mark = i + 2
 
     print(new.strip(), end="")
