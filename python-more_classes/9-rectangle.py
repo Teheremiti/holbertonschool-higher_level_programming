@@ -135,7 +135,7 @@ class Rectangle:
                 It is similar to the "self" parameter used in instance methods,
                 but instead of referring to an instance of the class, it refers
                 to the class itself.
-            
+
             size (int, optional): The height and width of the rectangle
             to create.
 
