@@ -76,5 +76,5 @@ class Rectangle:
             for h in range(self.__height):
                 rectangle += newline + "#" * self.__width
                 newline = "\n"
-        
+
         return rectangle
