@@ -20,7 +20,7 @@ class Square(Rectangle):
 
     def area(self):
         """Computes and returns the area of the rectangle"""
-        return self.__width * self.__height
+        return self.__size ** 2
 
     def __str__(self):
         """Defines the string representation of a square"""
