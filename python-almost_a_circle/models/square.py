@@ -82,3 +82,18 @@ class Square(Rectangle):
                     self.y = value
                 elif attr == "id":
                     self.id = value
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a square"""
+
+        my_dict = {}
+        for attr, value in self.__dict__.items():
+            if attr == "id":
+                my_dict["id"] = value
+            elif attr == "_Rectangle__width":
+                my_dict["size"] = value
+            elif attr == "_Rectangle__x":
+                my_dict["x"] = value
+            elif attr == "_Rectangle__y":
+                my_dict["y"] = value
+        return my_dict
