@@ -136,3 +136,30 @@ class Rectangle(Base):
         """Defines the string representation of a Rectangle instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
+
+    def update(self, *args):
+        """Allows a user to update a Rectangle instance's attributes after
+        it was created.
+
+        Args:
+            id (int, optional): Integer to set the Rectangle instance's id to
+            width (int, optional): New width of the instance
+            height (int, optional): New height of the instance
+            x (int, optional): New x position of the instance
+            y (int, optional): New y position of the instance
+        """
+
+        position = 1
+        for arg in args:
+            if position == 1:
+                self.id = arg
+            elif position == 2:
+                self.width = arg
+            elif position == 3:
+                self.height = arg
+            elif position == 4:
+                self.x = arg
+            elif position == 5:
+                self.y = arg
+
+            position += 1
