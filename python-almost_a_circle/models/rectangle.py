@@ -137,7 +137,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Allows a user to update a Rectangle instance's attributes after
         it was created.
 
@@ -147,19 +147,35 @@ class Rectangle(Base):
             height (int, optional): New height of the instance
             x (int, optional): New x position of the instance
             y (int, optional): New y position of the instance
+
+            **kwargs (dict): key/value pairs of attributes
         """
 
-        position = 1
-        for arg in args:
-            if position == 1:
-                self.id = arg
-            elif position == 2:
-                self.width = arg
-            elif position == 3:
-                self.height = arg
-            elif position == 4:
-                self.x = arg
-            elif position == 5:
-                self.y = arg
+        if args:
+            position = 1
+            for arg in args:
+                if position == 1:
+                    self.id = arg
+                elif position == 2:
+                    self.width = arg
+                elif position == 3:
+                    self.height = arg
+                elif position == 4:
+                    self.x = arg
+                elif position == 5:
+                    self.y = arg
 
-            position += 1
+                position += 1
+
+        else:
+            for attr, value in kwargs.items():
+                if attr == "width":
+                    self.width = value
+                elif attr == "height":
+                    self.height = value
+                elif attr == "x":
+                    self.x = value
+                elif attr == "y":
+                    self.y = value
+                elif attr == "id":
+                    self.id = value
