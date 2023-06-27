@@ -4,7 +4,6 @@
 
 import json
 
-
 class Base:
     """Defines the attributes and methods of the Base class"""
 
@@ -54,3 +53,12 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with attributes already set"""
+
+        dummy = cls(3, 5)
+        dummy.update(**dictionary)
+
+        return dummy
