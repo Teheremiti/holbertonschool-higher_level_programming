@@ -1,0 +1,82 @@
+#!/usr/bin/python3
+"""Module defining the Rectangle class"""
+
+
+from models.base import Base
+
+
+class Rectangle(Base):
+    """Defines the attributes and methods of the Rectangle class that
+    inherits from Base"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Constructor method for the Rectangle class.
+
+        Args:
+            width (int): Determines the width of the Rectangle instance
+            height (int): Determines the height of the Rectangle instance
+            x (int): Position of the object on the x axis
+            y (int): Position of the object on the y axis
+        """
+
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+        super().__init__(id)
+
+    @property
+    def width(self):
+        """Getter for the 'width' private instance attribute"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Sets the width of the Rectangle instance
+
+        Args:
+            value (int): Positive integer
+        """
+        self.__width = value
+
+    @property
+    def height(self):
+        """Getter for the 'height' private instance attribute"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Sets the height of the Rectangle instance
+
+        Args:
+            value (int): Positive integer
+        """
+        self.__height = value
+
+    @property
+    def x(self):
+        """Getter for the 'x' private instance attribute"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """Sets the x position of the Rectangle instance
+
+        Args:
+            value (int): Positive integer
+        """
+        self.__x = value
+
+    @property
+    def y(self):
+        """Getter for the 'y' private instance attribute"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Sets the y position of the Rectangle instance
+
+        Args:
+            value (int): Positive integer
+        """
+        self.__y = value
