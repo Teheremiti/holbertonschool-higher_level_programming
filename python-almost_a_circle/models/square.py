@@ -51,3 +51,34 @@ class Square(Rectangle):
         """Defines the string representation of a Square object"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """Allows the user to update a square's attributes after it was
+        created."""
+
+        if args:
+            position = 1
+            for arg in args:
+                if position == 1:
+                    self.id = arg
+                elif position == 2:
+                    self.width = arg
+                    self.height = arg
+                elif position == 3:
+                    self.x = arg
+                elif position == 4:
+                    self.y = arg
+
+                position += 1
+
+        else:
+            for attr, value in kwargs.items():
+                if attr == "size":
+                    self.width = value
+                    self.height = value
+                elif attr == "x":
+                    self.x = value
+                elif attr == "y":
+                    self.y = value
+                elif attr == "id":
+                    self.id = value
