@@ -3,6 +3,7 @@
 
 
 import json
+from os.path import exists
 
 
 class Base:
@@ -64,3 +65,21 @@ class Base:
         dummy.update(**dictionary)
 
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a file containing JSON string
+        representation of a class 'cls' object"""
+
+        filename = "{}.json".format(cls.__name__)
+        if not exists(filename):
+            return []
+
+        with open(filename, "r") as f:
+            json_str = f.read()
+            json_list = cls.from_json_string(json_str)
+            list_objs = []
+            for dict in json_list:
+                list_objs.append(cls.create(**dict))
+
+            return list_objs
