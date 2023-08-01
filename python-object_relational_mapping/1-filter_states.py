@@ -16,7 +16,7 @@ if __name__ == "__main__":
         charset="utf8")
 
     c = db.cursor()
-    c.execute("""SELECT * FROM states WHERE name LIKE 'N%'""")
+    c.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'""")
     for row in c.fetchall():
         print(row)
 
